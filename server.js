@@ -1,5 +1,6 @@
 const express = require('express')
 const server = express();
+const sqlite = require('sqlite3');
 
 server
      .use(express.json())
@@ -12,7 +13,19 @@ server
           next();
      });
 
+server.get('/users', (req, res) => {
+     const db = new sqlite3.Database("./gik339-labb2.db");
+
+     const sql = 'SELECT * FROM users';
+
+     db.all(sql, (err, rows) => {
+          if (err) {
+               return res.status(500).send({ error: 'Database error', details: err.message });
+          }
+          res.send(rows);
+     });
+});
+
 server.listen(3000, () =>
      console.log('Running server on http://localhost:3000')
 );
-
