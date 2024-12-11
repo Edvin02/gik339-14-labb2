@@ -1,6 +1,6 @@
 const express = require('express')
 const server = express();
-const sqlite = require('sqlite3');
+const sqlite3 = require('sqlite3');
 
 server
      .use(express.json())
