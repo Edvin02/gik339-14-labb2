@@ -15,7 +15,7 @@ body {
     width: 500px;
     height: 500px;
     background-color: transparent;
-    border: 3px solid antiquewhite;
+    border: 0px solid antiquewhite;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
@@ -23,4 +23,34 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: none;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        color: #333;
+    }
+
+    li:last-child {
+        border-bottom: none;
+    }
+}
+
+li:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
 }
