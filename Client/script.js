@@ -1,11 +1,4 @@
-// const localUrl = "http://localhost:3000/users";
-
-// fetch(localUrl)
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
 // Funktion för att hämta användardata från servern och visa det i gränssnittet
-
 async function fetchUsers() {
   try {
     const response = await fetch("http://localhost:3000/users");
