@@ -1,3 +1,4 @@
+// Uppgift 6
 // Funktion för att hämta användardata från servern och visa det i gränssnittet
 async function fetchUsers() {
   try {
@@ -7,6 +8,7 @@ async function fetchUsers() {
     // Konverterar svaret från servern till JSON-format
     const users = await response.json();
 
+    //uppgift 7
     // Hämtar elementet med id "user-list" där användarlistan ska visas
     const userList = document.getElementById("user-list");
 
@@ -23,6 +25,9 @@ async function fetchUsers() {
 
       // Sätter textinnehållet för <li> med användarens förnamn, efternamn och användarnamn
       li.textContent = `${user.firstName} ${user.lastName} (${user.username})`;
+
+      //skriver ut "users" för att verifiera att bvi får rätt resultat
+      console.log(users);
 
       // Lägger till <li>-elementet i <ul>-elementet
       ul.appendChild(li);
