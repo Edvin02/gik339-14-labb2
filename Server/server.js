@@ -34,12 +34,10 @@ server.get("/users", (req, res) => {
   // Kör SQL-frågan och returnerar alla rader
   db.all(sql, (err, rows) => {
     if (err) {
-      // Skickar ett felmeddelande om det uppstår ett fel i databasen
       return res
         .status(500)
         .send({ error: "Database error", details: err.message });
     }
-    // Skickar de hämtade användarna som svar
     res.send(rows);
   });
 
